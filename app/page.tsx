@@ -8,6 +8,8 @@ import TransformerExperience from "@/components/TransformerExperience";
 import { transformerConfig } from "@/data/transformerData";
 import EducationTimeline from "@/components/EducationTimeline";
 import ProfessionalSummary from "@/components/ProfessionalSummary";
+import NameOverlay from "@/components/NameOverlay";
+import SkillsExpertise from "@/components/SkillsExpertise";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -25,6 +27,9 @@ export default function Home() {
         style={{ height: transformerConfig.scrollLength }}
       >
         <div className="sticky top-0 h-screen w-full overflow-hidden">
+          {/* Name Overlay (z-30) */}
+          <NameOverlay name={transformerConfig.name} />
+
           {/* Canvas Layer (z-0) */}
           <TransformerScrollCanvas
             scrollYProgress={scrollYProgress}
@@ -35,6 +40,7 @@ export default function Home() {
       </section>
 
       <ProfessionalSummary />
+      <SkillsExpertise />
       <EducationTimeline />
     </main>
   );

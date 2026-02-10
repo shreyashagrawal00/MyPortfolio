@@ -2,6 +2,7 @@ export const transformerConfig = {
   totalFrames: 120,
   imageFolderPath: "/images/transformer-sequence",
   scrollLength: "500vh",
+  name: "SHREYASH AGRAWAL",
 };
 
 export const professionalSummary = {
@@ -125,3 +126,22 @@ export const educationData = [
     major: "Computer Science",
   },
 ];
+
+export const skillsData = {
+  title: "SKILLS & EXPERTISE",
+  description: "A comprehensive collection of my technical and professional capabilities.",
+  skills: [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Node-JS",
+    "React-JS",
+    "Express",
+    "MongoDB",
+    "SQL",
+    "JAVA",
+    "Python",
+    "Git & GitHub",
+    "Tailwind",
+  ],
+};
