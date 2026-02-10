@@ -2,6 +2,13 @@
 
 import { contactData } from "@/data/transformerData";
 import { motion } from "framer-motion";
+import { Linkedin, Github, Instagram } from "lucide-react";
+
+const IconMap: { [key: string]: any } = {
+  linkedin: Linkedin,
+  github: Github,
+  instagram: Instagram,
+};
 
 export default function Connect() {
   return (
@@ -26,33 +33,34 @@ export default function Connect() {
         </motion.div>
 
         <div className="flex flex-wrap justify-center gap-8 md:gap-16">
-          {contactData.links.map((link, index) => (
-            <motion.a
-              key={link.name}
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -10 }}
-              className="group flex flex-col items-center gap-4"
-            >
-              <div className="relative w-16 h-16 md:w-20 md:h-20 border border-white/10 flex items-center justify-center group-hover:border-accent-metal transition-colors">
-                {/* Corner accents */}
-                <div className="absolute -top-1 -right-1 w-3 h-3 border-t-2 border-r-2 border-accent-metal opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="absolute -bottom-1 -left-1 w-3 h-3 border-b-2 border-l-2 border-accent-metal opacity-0 group-hover:opacity-100 transition-opacity" />
+          {contactData.links.map((link, index) => {
+            const Icon = IconMap[link.icon];
+            return (
+              <motion.a
+                key={link.name}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -10 }}
+                className="group flex flex-col items-center gap-4"
+              >
+                <div className="relative w-16 h-16 md:w-20 md:h-20 border border-white/10 flex items-center justify-center group-hover:border-accent-metal transition-all duration-300 backdrop-blur-sm">
+                  {/* Corner accents */}
+                  <div className="absolute -top-1 -right-1 w-3 h-3 border-t-2 border-r-2 border-accent-metal opacity-0 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute -bottom-1 -left-1 w-3 h-3 border-b-2 border-l-2 border-accent-metal opacity-0 group-hover:opacity-100 transition-opacity" />
 
-                <span className="font-heading text-xs tracking-widest text-white/40 group-hover:text-white transition-colors">
-                  {link.name.substring(0, 3).toUpperCase()}
+                  {Icon && <Icon className="w-8 h-8 text-white/40 group-hover:text-white transition-colors" />}
+                </div>
+                <span className="font-heading text-[10px] md:text-sm tracking-[0.4em] text-white/20 group-hover:text-accent-metal transition-colors uppercase">
+                  {link.name}
                 </span>
-              </div>
-              <span className="font-heading text-[10px] md:text-sm tracking-[0.4em] text-white/20 group-hover:text-accent-metal transition-colors uppercase">
-                {link.name}
-              </span>
-            </motion.a>
-          ))}
+              </motion.a>
+            );
+          })}
         </div>
 
         {/* System Footer Decoration */}
