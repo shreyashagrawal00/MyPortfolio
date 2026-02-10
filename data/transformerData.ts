@@ -4,6 +4,11 @@ export const transformerConfig = {
   scrollLength: "500vh",
 };
 
+export const professionalSummary = {
+  title: "PROFESSIONAL SUMMARY",
+  content: "Motivated and detail-oriented Software Engineering aspirant with a strong foundation in computer science fundamentals, data structures, and problem-solving. Experienced in building projects using modern programming languages and frameworks, with a keen interest in developing scalable, efficient, and user-centric software solutions. Adept at learning new technologies quickly, collaborating in team environments, and applying logical thinking to real-world problems. Seeking an opportunity to contribute as a Software Engineer while continuously enhancing technical and professional skills.",
+};
+
 export interface HUDCopyLine {
   scrollStart: number; // 0-1 range
   scrollEnd: number;   // 0-1 range
@@ -97,5 +102,26 @@ export const featuresData = [
   {
     title: "Minimal HUD Design",
     description: "Non-invasive overlay that enhances without distracting from the sequence.",
+  },
+];
+
+export const educationData = [
+  {
+    institution: "KMPS Mathura",
+    degree: "High School",
+    period: "2021 - 2022",
+    major: "General",
+  },
+  {
+    institution: "KMPS Mathura",
+    degree: "Higher Secondary School",
+    period: "2023 - 2024",
+    major: "Science",
+  },
+  {
+    institution: "GLA University",
+    degree: "BTech",
+    period: "2024 - 2028",
+    major: "Computer Science",
   },
 ];

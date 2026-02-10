@@ -61,59 +61,7 @@ export default function TransformerScrollCanvas({
     setImages(loadedImages);
   }, [totalFrames, imageFolderPath]);
 
-  // Handle canvas resize and device pixel ratio for high-DPI displays
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const handleResize = () => {
-      const dpr = window.devicePixelRatio || 1;
-      const rect = canvas.parentElement?.getBoundingClientRect() || canvas.getBoundingClientRect();
-
-      // Set actual canvas size (accounting for device pixel ratio)
-      canvas.width = rect.width * dpr;
-      canvas.height = rect.height * dpr;
-
-      // Set display size via CSS
-      canvas.style.width = `${rect.width}px`;
-      canvas.style.height = `${rect.height}px`;
-
-      // Trigger re-render of current frame immediately after resize
-      const ctx = canvas.getContext("2d");
-      const currentIndex = Math.round(frameIndex.get());
-      const img = images[currentIndex];
-
-      if (img && img.complete && ctx) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        const canvasAspect = canvas.width / canvas.height;
-        const imgAspect = img.width / img.height;
-
-        let drawWidth, drawHeight, offsetX, offsetY;
-
-        if (imgAspect > canvasAspect) {
-          drawWidth = canvas.width;
-          drawHeight = canvas.width / imgAspect;
-          offsetX = 0;
-          offsetY = (canvas.height - drawHeight) / 2;
-        } else {
-          drawHeight = canvas.height;
-          drawWidth = canvas.height * imgAspect;
-          offsetX = (canvas.width - drawWidth) / 2;
-          offsetY = 0;
-        }
-
-        ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
-      }
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, [images, frameIndex]);
-
-  // Combined render effect to ensure consistent drawing
+  // Render frame based on scroll position (Hook slot #2)
   useEffect(() => {
     if (!imagesLoaded || images.length === 0) return;
 
@@ -122,7 +70,7 @@ export default function TransformerScrollCanvas({
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const unsubscribe = frameIndex.on("change", (latest) => {
+    const drawFrame = (latest: number) => {
       const index = Math.round(latest);
       const img = images[index];
 
@@ -148,10 +96,61 @@ export default function TransformerScrollCanvas({
 
         ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
       }
+    };
+
+    // Draw initial frame
+    drawFrame(frameIndex.get());
+
+    const unsubscribe = frameIndex.on("change", (latest) => {
+      drawFrame(latest);
     });
 
     return () => unsubscribe();
   }, [frameIndex, images, imagesLoaded]);
+
+  // Handle canvas resize (Hook slot #3)
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const handleResize = () => {
+      const dpr = window.devicePixelRatio || 1;
+      const rect = canvas.parentElement?.getBoundingClientRect() || canvas.getBoundingClientRect();
+
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      canvas.style.width = `${rect.width}px`;
+      canvas.style.height = `${rect.height}px`;
+
+      const ctx = canvas.getContext("2d");
+      const currentIndex = Math.round(frameIndex.get());
+      const img = images[currentIndex];
+
+      if (img && img.complete && ctx) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const canvasAspect = canvas.width / canvas.height;
+        const imgAspect = img.width / img.height;
+        let drawWidth, drawHeight, offsetX, offsetY;
+
+        if (imgAspect > canvasAspect) {
+          drawWidth = canvas.width;
+          drawHeight = canvas.width / imgAspect;
+          offsetX = 0;
+          offsetY = (canvas.height - drawHeight) / 2;
+        } else {
+          drawHeight = canvas.height;
+          drawWidth = canvas.height * imgAspect;
+          offsetX = (canvas.width - drawWidth) / 2;
+          offsetY = 0;
+        }
+        ctx.drawImage(img, offsetX, offsetY, drawWidth, drawHeight);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [images, frameIndex]);
 
   return (
     <>
