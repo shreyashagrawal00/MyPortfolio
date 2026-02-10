@@ -13,6 +13,7 @@ import SkillsExpertise from "@/components/SkillsExpertise";
 import Languages from "@/components/Languages";
 import Projects from "@/components/Projects";
 import Connect from "@/components/Connect";
+import GetInTouch from "@/components/GetInTouch";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -48,6 +49,7 @@ export default function Home() {
       <SkillsExpertise />
       <Languages />
       <Connect />
+      <GetInTouch />
     </main>
   );
 }

@@ -63,17 +63,6 @@ export default function Connect() {
           })}
         </div>
 
-        {/* System Footer Decoration */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 2, delay: 1 }}
-          className="mt-32 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4"
-        >
-          <span className="font-heading text-[10px] text-white/10 tracking-[1em]">SYSTEM: ONLINE</span>
-          <span className="font-heading text-[10px] text-white/10 tracking-[0.5em]">© 2026 SHREYASH AGRAWAL</span>
-          <span className="font-heading text-[10px] text-white/10 tracking-[1em]">PORTFOLIO_V2.0</span>
-        </motion.div>
       </div>
     </section>
   );

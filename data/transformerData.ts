@@ -180,3 +180,13 @@ export const contactData = {
     { name: "Instagram", url: "https://www.instagram.com/shreyash_agrawal00/", icon: "instagram" },
   ],
 };
+
+export const getInTouchData = {
+  title: "GET IN TOUCH",
+  email: "shreyash.agrawal3004@gmail.com",
+  phone: "7017373927",
+  location: "Mathura, Uttar Pradesh, India",
+  preferredMethod: "Both (Email & Phone)",
+  responseStatus: "SYSTEM: ACTIVE",
+  quickResponse: "I typically respond within 24 hours during business days. For urgent matters, please use the phone number provided.",
+};
