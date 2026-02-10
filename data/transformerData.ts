@@ -145,3 +145,12 @@ export const skillsData = {
     "Tailwind",
   ],
 };
+
+export const languagesData = {
+  title: "LANGUAGES",
+  description: "Languages I speak and their proficiency levels.",
+  list: [
+    { name: "English", level: "Professional" },
+    { name: "Hindi", level: "Fluent" },
+  ],
+};

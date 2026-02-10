@@ -10,6 +10,7 @@ import EducationTimeline from "@/components/EducationTimeline";
 import ProfessionalSummary from "@/components/ProfessionalSummary";
 import NameOverlay from "@/components/NameOverlay";
 import SkillsExpertise from "@/components/SkillsExpertise";
+import Languages from "@/components/Languages";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -40,8 +41,9 @@ export default function Home() {
       </section>
 
       <ProfessionalSummary />
-      <SkillsExpertise />
       <EducationTimeline />
+      <SkillsExpertise />
+      <Languages />
     </main>
   );
 }
