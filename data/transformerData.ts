@@ -154,3 +154,29 @@ export const languagesData = {
     { name: "Hindi", level: "Fluent" },
   ],
 };
+
+export const projectsData = [
+  {
+    title: "Smart Hostel Hub",
+    description: "A comprehensive digital management ecosystem designed to streamline hostel life for both students and administration, featuring real-time communication and safety automation.",
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Tailwind"],
+    link: "https://hosteltracker00.vercel.app/",
+    source: "https://github.com/shreyashagrawal00/HackOverflow_2026",
+  },
+  {
+    title: "eSeva India: QueueSmart",
+    description: "A modern web application designed to eliminate long waiting lines for government and healthcare services, allowing users to book appointments and track live queue positions.",
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB Atlas", "JWT", "OTP"],
+    link: "https://eseva-india00.onrender.com/",
+    source: "https://github.com/shreyashagrawal00/WebXdesign_Project",
+  },
+];
+
+export const contactData = {
+  title: "CONNECT WITH ME",
+  links: [
+    { name: "LinkedIn", url: "https://www.linkedin.com/in/shreyash-agrawal-87636134a/", icon: "linkedin" },
+    { name: "Github", url: "https://github.com/shreyashagrawal00", icon: "github" },
+    { name: "Instagram", url: "https://www.instagram.com/shreyash_agrawal00/", icon: "instagram" },
+  ],
+};

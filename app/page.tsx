@@ -11,6 +11,8 @@ import ProfessionalSummary from "@/components/ProfessionalSummary";
 import NameOverlay from "@/components/NameOverlay";
 import SkillsExpertise from "@/components/SkillsExpertise";
 import Languages from "@/components/Languages";
+import Projects from "@/components/Projects";
+import Connect from "@/components/Connect";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -42,8 +44,10 @@ export default function Home() {
 
       <ProfessionalSummary />
       <EducationTimeline />
+      <Projects />
       <SkillsExpertise />
       <Languages />
+      <Connect />
     </main>
   );
 }
