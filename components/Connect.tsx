@@ -2,12 +2,24 @@
 
 import { contactData } from "@/data/transformerData";
 import { motion } from "framer-motion";
-import { Linkedin, Github, Instagram } from "lucide-react";
+import { Linkedin, Github, Instagram, Terminal } from "lucide-react";
+
+const LeetcodeIcon = ({ className }: { className?: string }) => (
+  <svg
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path d="M13.483 0a1.374 1.374 0 0 0-.961.414l-4.377 4.517a1.371 1.371 0 0 0-.001 1.935l1.042 1.053a1.37 1.37 0 0 0 1.942 0l3.375-3.483a.964.964 0 0 1 1.37 0l1.833 1.834a.97.97 0 0 1 0 1.37l-6.316 6.316a.965.965 0 0 1-1.37 0l-1.042-1.053a1.37 1.37 0 0 0-1.942 0l-1.042 1.053a1.373 1.373 0 0 0 0 1.935l1.042 1.053c.27.272.63.414.961.414a1.357 1.357 0 0 0 .961-.414l1.042-1.053a1.371 1.371 0 0 0 .001-1.935l-1.042-1.053a1.37 1.37 0 0 0-1.942 0l-3.375 3.483a.964.964 0 0 1-1.37 0l-1.833-1.834a.97.97 0 0 1 0-1.37l6.316-6.316a.965.965 0 0 1 1.37 0l1.042 1.053a1.37 1.37 0 0 0 1.942 0l1.042-1.053a1.373 1.373 0 0 0 0-1.935l-1.042-1.053a1.376 1.376 0 0 0-1.942 0L.414 12.061l1.042 1.053a1.37 1.37 0 0 0 1.942 0l1.042-1.053a1.376 1.376 0 0 0 0-1.935L12.522.414A1.374 1.374 0 0 0 13.483 0z" />
+  </svg>
+);
 
 const IconMap: { [key: string]: any } = {
   linkedin: Linkedin,
   github: Github,
   instagram: Instagram,
+  leetcode: LeetcodeIcon,
 };
 
 export default function Connect() {

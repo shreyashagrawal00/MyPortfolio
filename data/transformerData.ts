@@ -178,6 +178,7 @@ export const contactData = {
     { name: "LinkedIn", url: "https://www.linkedin.com/in/shreyash-agrawal-87636134a/", icon: "linkedin" },
     { name: "Github", url: "https://github.com/shreyashagrawal00", icon: "github" },
     { name: "Instagram", url: "https://www.instagram.com/shreyash_agrawal00/", icon: "instagram" },
+    { name: "LeetCode", url: "https://leetcode.com/u/K4fMSgxC0S/", icon: "leetcode" },
   ],
 };
 
