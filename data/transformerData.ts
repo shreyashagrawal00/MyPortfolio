@@ -162,6 +162,7 @@ export const projectsData = [
     tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Tailwind"],
     link: "https://hosteltracker00.vercel.app/",
     source: "https://github.com/shreyashagrawal00/HackOverflow_2026",
+    image: "/images/projects/smart-hostel-hub.png",
   },
   {
     title: "eSeva India: QueueSmart",
@@ -169,6 +170,7 @@ export const projectsData = [
     tech: ["React.js", "Node.js", "Express.js", "MongoDB Atlas", "JWT", "OTP"],
     link: "https://eseva-india00.onrender.com/",
     source: "https://github.com/shreyashagrawal00/WebXdesign_Project",
+    image: "/images/projects/eseva-india.png",
   },
 ];
 

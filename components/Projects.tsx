@@ -50,11 +50,25 @@ export default function Projects() {
                   {project.title}
                 </h3>
 
-                <p className="font-body text-white/60 leading-relaxed mb-8 flex-grow">
+                <p className="font-body text-white/60 leading-relaxed mb-6 flex-grow">
                   {project.description}
                 </p>
 
+                {/* @ts-ignore */}
+                {project.image && (
+                  <div className="relative w-full aspect-video mb-8 overflow-hidden border border-white/10 group/img">
+                    <motion.img
+                      /* @ts-ignore */
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover grayscale group-hover/img:grayscale-0 transition-all duration-700 scale-100 group-hover/img:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-accent-metal/10 opacity-0 group-hover/img:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                  </div>
+                )}
+
                 <div className="flex flex-wrap gap-2 mb-8">
+
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
