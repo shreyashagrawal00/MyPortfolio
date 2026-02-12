@@ -27,12 +27,6 @@ export const hudCopyLines: HUDCopyLine[] = [
     position: "top-right",
   },
   {
-    scrollStart: 0.35,
-    scrollEnd: 0.5,
-    text: "CORE ENGAGED",
-    position: "bottom-left",
-  },
-  {
     scrollStart: 0.5,
     scrollEnd: 0.65,
     text: "STRUCTURAL RECONFIGURATION",
