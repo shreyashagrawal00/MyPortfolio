@@ -14,14 +14,14 @@ export default function NameOverlay({ name }: { name: string }) {
   return (
     <motion.div
       style={{ opacity, y }}
-      className="absolute top-[20%] left-40 z-30 pointer-events-none"
+      className="absolute top-[18%] md:top-[20%] left-6 md:left-20 lg:left-40 z-30 pointer-events-none"
     >
-      <div className="flex flex-col items-start text-left">
+      <div className="flex flex-col items-start text-left max-w-[85vw] md:max-w-none">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="font-heading text-lg md:text-2xl text-white tracking-[0.2em] drop-shadow-2xl"
+          className="font-heading text-lg md:text-2xl lg:text-3xl text-white tracking-[0.2em] drop-shadow-2xl"
         >
           {name.split(" ")[0]}
         </motion.div>
@@ -29,7 +29,7 @@ export default function NameOverlay({ name }: { name: string }) {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.8 }}
-          className="font-heading text-lg md:text-2xl text-accent-metal self-start tracking-[0.2em] -mt-1 drop-shadow-2xl"
+          className="font-heading text-lg md:text-2xl lg:text-3xl text-accent-metal self-start tracking-[0.2em] -mt-1 drop-shadow-2xl"
         >
           {name.split(" ")[1]}
         </motion.div>
@@ -42,9 +42,9 @@ export default function NameOverlay({ name }: { name: string }) {
           className="h-1 bg-white/10 mt-2 origin-left w-full"
         />
         <div className="flex flex-col items-start mt-2">
-          <span className="font-heading text-[10px] text-white/30 tracking-[0.5em]">SOFTWARE ENGINEER</span>
-          <span className="font-body text-xl md:text-2xl text-white font-bold italic tracking-[0.05em] whitespace-nowrap">2nd Year GLA University Student</span>
-          <span className="font-heading text-[10px] text-accent-metal tracking-[0.5em] mt-1 border border-accent-metal/50 px-2 py-0.5">SYSTEM: ACTIVE</span>
+          <span className="font-heading text-[8px] md:text-[10px] text-white/30 tracking-[0.3em] md:tracking-[0.5em]">SOFTWARE ENGINEER</span>
+          <span className="font-body text-lg md:text-2xl text-white font-bold italic tracking-[0.05em] leading-tight">2nd Year GLA University Student</span>
+          <span className="font-heading text-[8px] md:text-[10px] text-accent-metal tracking-[0.3em] md:tracking-[0.5em] mt-2 border border-accent-metal/50 px-2 py-0.5">SYSTEM: ACTIVE</span>
         </div>
       </div>
     </motion.div>

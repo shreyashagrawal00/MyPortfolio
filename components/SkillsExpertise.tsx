@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function SkillsExpertise() {
   return (
-    <section className="py-24 px-6 md:px-12 bg-base-dark relative overflow-hidden">
+    <section className="py-16 md:py-24 px-4 md:px-12 bg-base-dark relative overflow-hidden">
       {/* Decorative background element */}
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-accent-metal/50 to-transparent opacity-30" />
 
@@ -17,7 +17,7 @@ export default function SkillsExpertise() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="font-heading text-3xl md:text-4xl tracking-[0.3em] text-white mb-4 border-l-4 border-accent-metal pl-6">
+          <h2 className="font-heading text-2xl md:text-4xl tracking-[0.3em] text-white mb-4 border-l-4 border-accent-metal pl-6">
             {skillsData.title}
           </h2>
           <p className="font-body text-lg text-white/60 tracking-wider">

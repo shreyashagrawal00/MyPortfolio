@@ -24,7 +24,7 @@ const IconMap: { [key: string]: any } = {
 
 export default function Connect() {
   return (
-    <section className="py-24 px-6 md:px-12 bg-base-dark relative overflow-hidden">
+    <section className="py-16 md:py-24 px-4 md:px-12 bg-base-dark relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-accent-metal/30 to-transparent" />
 
       <div className="max-w-4xl mx-auto text-center">
@@ -33,13 +33,13 @@ export default function Connect() {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
-          className="mb-16"
+          className="mb-12 md:mb-16"
         >
-          <h2 className="font-heading text-3xl md:text-5xl tracking-[0.5em] text-white mb-6">
+          <h2 className="font-heading text-2xl md:text-5xl tracking-[0.5em] text-white mb-6">
             {contactData.title}
           </h2>
           <div className="h-[2px] w-24 bg-accent-metal mx-auto mb-8" />
-          <p className="font-body text-lg text-white/40 tracking-widest uppercase">
+          <p className="font-body text-base md:text-lg text-white/40 tracking-widest uppercase">
             Let's build the future together.
           </p>
         </motion.div>

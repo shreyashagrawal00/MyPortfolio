@@ -5,20 +5,20 @@ import { motion } from "framer-motion";
 
 export default function Projects() {
   return (
-    <section className="py-24 px-6 md:px-12 bg-base-dark relative">
+    <section className="py-16 md:py-24 px-4 md:px-12 bg-base-dark relative">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
-          className="mb-16 flex justify-between items-end border-b border-neutral-carbon/20 pb-8"
+          className="mb-16 flex flex-col md:flex-row justify-between items-start md:items-end border-b border-neutral-carbon/20 pb-8 gap-4"
         >
           <div>
-            <h2 className="font-heading text-3xl md:text-4xl tracking-[0.3em] text-white mb-4">
+            <h2 className="font-heading text-2xl md:text-4xl tracking-[0.3em] text-white mb-4">
               PROJECTS
             </h2>
-            <p className="font-body text-lg text-white/60 tracking-wider">
+            <p className="font-body text-base md:text-lg text-white/60 tracking-wider">
               Recent developments in scalable systems and interactive platforms.
             </p>
           </div>

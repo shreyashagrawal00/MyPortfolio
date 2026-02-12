@@ -5,14 +5,14 @@ import { motion } from "framer-motion";
 
 export default function ProfessionalSummary() {
   return (
-    <section className="py-24 px-6 md:px-12 bg-base-dark">
+    <section className="py-16 md:py-24 px-4 md:px-12 bg-base-dark">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, ease: "easeOut" }}
           viewport={{ once: true }}
-          className="relative bg-neutral-carbon/10 border border-neutral-carbon/20 p-8 md:p-12 backdrop-blur-xl overflow-hidden group"
+          className="relative bg-neutral-carbon/10 border border-neutral-carbon/20 p-6 md:p-12 backdrop-blur-xl overflow-hidden group"
         >
           {/* Animated decorative corner */}
           <div className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-accent-metal/30 transition-all duration-500 group-hover:w-24 group-hover:h-24 group-hover:border-accent-metal" />

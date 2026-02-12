@@ -5,16 +5,16 @@ import { motion } from "framer-motion";
 
 export default function Languages() {
   return (
-    <section className="py-24 px-6 md:px-12 bg-base-dark relative overflow-hidden">
+    <section className="py-16 md:py-24 px-4 md:px-12 bg-base-dark relative overflow-hidden">
       <div className="max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
-          className="mb-12"
+          className="mb-8 md:mb-12"
         >
-          <h2 className="font-heading text-3xl md:text-4xl tracking-[0.3em] text-white mb-4 border-l-4 border-accent-metal pl-6">
+          <h2 className="font-heading text-2xl md:text-4xl tracking-[0.3em] text-white mb-4 border-l-4 border-accent-metal pl-6">
             {languagesData.title}
           </h2>
           <p className="font-body text-lg text-white/60 tracking-wider">

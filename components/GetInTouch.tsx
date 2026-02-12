@@ -6,7 +6,7 @@ import { Mail, Phone, MapPin, Clock, Info } from "lucide-react";
 
 export default function GetInTouch() {
   return (
-    <section className="py-24 px-6 md:px-12 bg-base-dark relative overflow-hidden">
+    <section className="py-16 md:py-24 px-4 md:px-12 bg-base-dark relative overflow-hidden">
       {/* Cinematic background scanline */}
       <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-white/5 to-transparent animate-pulse" />
 
@@ -18,10 +18,10 @@ export default function GetInTouch() {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="font-heading text-3xl md:text-4xl tracking-[0.3em] text-white mb-4 border-l-4 border-accent-metal pl-6">
+          <h2 className="font-heading text-2xl md:text-4xl tracking-[0.3em] text-white mb-4 border-l-4 border-accent-metal pl-6">
             {getInTouchData.title}
           </h2>
-          <p className="font-body text-lg text-white/60 tracking-wider">
+          <p className="font-body text-base md:text-lg text-white/60 tracking-wider">
             System contact protocols and location data.
           </p>
         </motion.div>
@@ -93,11 +93,11 @@ export default function GetInTouch() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 2, delay: 1 }}
-          className="mt-32 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4"
+          className="mt-20 md:mt-32 pt-12 border-t border-white/5 flex flex-wrap justify-center md:justify-between items-center gap-6 text-center"
         >
-          <span className="font-heading text-[10px] text-white/10 tracking-[1em]">SYSTEM: ONLINE</span>
-          <span className="font-heading text-[10px] text-white/10 tracking-[0.5em]">© 2026 SHREYASH AGRAWAL</span>
-          <span className="font-heading text-[10px] text-white/10 tracking-[1em]">PORTFOLIO_V2.0</span>
+          <span className="font-heading text-[8px] md:text-[10px] text-white/10 tracking-[0.5em] md:tracking-[1em]">SYSTEM: ONLINE</span>
+          <span className="font-heading text-[8px] md:text-[10px] text-white/10 tracking-[0.3em] md:tracking-[0.5em]">© 2026 SHREYASH AGRAWAL</span>
+          <span className="font-heading text-[8px] md:text-[10px] text-white/10 tracking-[0.5em] md:tracking-[1em]">PORTFOLIO_V2.0</span>
         </motion.div>
       </div>
     </section>
