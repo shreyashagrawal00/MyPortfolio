@@ -98,12 +98,14 @@ export const educationData = [
     degree: "High School",
     period: "2021 - 2022",
     major: "General",
+    logo: "/images/education/kmps.png",
   },
   {
     institution: "KMPS Mathura",
     degree: "Higher Secondary School",
     period: "2023 - 2024",
     major: "Science",
+    logo: "/images/education/kmps.png",
   },
   {
     institution: "GLA University",
