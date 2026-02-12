@@ -19,20 +19,6 @@ export interface HUDCopyLine {
 
 // HUD copy lines triggered at specific scroll percentages
 export const hudCopyLines: HUDCopyLine[] = [
-  // Phase 1: Hero — Presence (0%-30%)
-  {
-    scrollStart: 0,
-    scrollEnd: 0.15,
-    text: "TRANSFORMATION SEQUENCE",
-    position: "top-left",
-  },
-  {
-    scrollStart: 0.05,
-    scrollEnd: 0.25,
-    text: "FRAME-BY-FRAME CINEMATIC DIRECTION",
-    position: "bottom-right",
-  },
-
   // Phase 2: Transformation — Peak (30%-75%)
   {
     scrollStart: 0.3,
