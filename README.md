@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SHREYASH AGRAWAL | 🦾 TRANSFORMER PORTFOLIO
 
-## Getting Started
+A high-end, cinematic web experience built with Next.js 15 and Framer Motion. This portfolio features a scroll-driven "Transformation Sequence" where a mechanical vehicle metamorphoses into a humanoid robot, synchronized precisely with the user's scroll progress.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🎬 Cinematic Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Transformation Sequence**: A recursive, frame-by-frame 120-image sequence rendered via HTML5 Canvas for maximum performance.
+- **Dynamic HUD Overlay**: Real-time Heads-Up Display that reacts to scroll progress with technical schematics and status updates.
+- **Interactive Terminal**: An integrated command-line interface for navigating system logs and developer credentials.
+- **Premium Aesthetics**: Engineered with deep blacks, metallic accents, and high-fidelity glassmorphism effects.
+- **Responsive Layout**: Fully optimized for mobile, tablet, and ultra-wide desktop displays.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠 Technical Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework**: [Next.js 15](https://nextjs.org/) (App Router)
+- **Animation**: [Framer Motion](https://www.framer.com/motion/)
+- **Rendering**: HTML5 Canvas API
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React
+- **Language**: TypeScript
 
-## Learn More
+## 🚀 Getting Started
 
-To learn more about Next.js, take a look at the following resources:
+### Prerequisites
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Node.js 18+ 
+- npm / yarn / pnpm
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Installation
 
-## Deploy on Vercel
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/shreyashagrawal00/MyPortfolio.git
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. **Run the development server**:
+   ```bash
+   npm run dev
+   ```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the sequence.
+
+## ⚙️ Customization
+
+Most of the portfolio data, including the transformation frames, HUD copy, and project details, is managed in a single configuration file:
+
+`data/transformerData.ts`
+
+## 📄 License
+
+This project is personal intellectual property. Feel free to use it for inspiration or contact me for collaboration.
+
+---
+
+**Designed & Engineered by Shreyash Agrawal**  
+[LinkedIn](https://www.linkedin.com/in/shreyash-agrawal-87636134a/) | [Portfolio](https://eseva-india00.onrender.com/)
+
