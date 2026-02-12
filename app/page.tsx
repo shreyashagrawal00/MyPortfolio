@@ -61,9 +61,9 @@ export default function Home() {
       <SystemSpecs />
       <EducationTimeline />
       <Projects />
+      <Resume />
       <SkillsExpertise />
       <Languages />
-      <Resume />
       <Connect />
       <GetInTouch />
     </main>
