@@ -15,7 +15,7 @@ export default function SystemSpecs() {
   }, []);
 
   return (
-    <section className="py-16 md:py-24 px-4 md:px-12 bg-base-dark relative overflow-hidden border-t border-white/5">
+    <section className="py-12 md:py-16 px-4 md:px-12 bg-base-dark relative overflow-hidden border-t border-white/5">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, scale: 0.98 }}
@@ -26,23 +26,23 @@ export default function SystemSpecs() {
         >
           {/* Left Column: Technical Grid */}
           <div className="space-y-8">
-            <div className="border-l-4 border-accent-metal pl-6">
-              <h2 className="font-heading text-2xl md:text-3xl tracking-[0.3em] text-white">SYSTEM_SPECS</h2>
-              <p className="font-body text-white/40 mt-2 tracking-widest uppercase text-xs">Runtime environment assessment</p>
+            <div className="border-l-2 border-accent-metal pl-4">
+              <h2 className="font-heading text-lg md:text-xl tracking-[0.3em] text-white">SYSTEM_SPECS</h2>
+              <p className="font-body text-white/40 mt-1 tracking-widest uppercase text-[9px]">Runtime environment assessment</p>
             </div>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3">
               {specsData.map((spec, index) => (
-                <div key={spec.label} className="bg-neutral-carbon/10 border border-white/5 p-6 group hover:border-accent-metal/30 transition-all">
-                  <span className="block font-heading text-[10px] text-accent-metal/50 tracking-widest mb-2">0{index + 1}_METRIC</span>
-                  <span className="block font-heading text-sm text-white/40 tracking-widest mb-1">{spec.label.toUpperCase()}</span>
-                  <span className="block font-heading text-lg text-white tracking-widest">{spec.value.toUpperCase()}</span>
+                <div key={spec.label} className="bg-neutral-carbon/10 border border-white/5 p-3 group hover:border-accent-metal/30 transition-all">
+                  <span className="block font-heading text-[8px] text-accent-metal/50 tracking-widest mb-1">0{index + 1}_METRIC</span>
+                  <span className="block font-heading text-[10px] text-white/40 tracking-widest mb-0.5">{spec.label.toUpperCase()}</span>
+                  <span className="block font-heading text-sm text-white tracking-widest">{spec.value.toUpperCase()}</span>
                 </div>
               ))}
             </div>
 
             {/* Cinematic Scanline decoration */}
-            <div className="relative h-48 bg-neutral-carbon/5 border border-white/5 overflow-hidden flex items-center justify-center">
+            <div className="relative h-32 bg-neutral-carbon/5 border border-white/5 overflow-hidden flex items-center justify-center">
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent-metal/5 to-transparent animate-pulse" />
               <div className="flex flex-col items-center gap-4 relative z-10">
                 <div className="w-16 h-16 rounded-full border border-accent-metal flex items-center justify-center animate-spin-slow">
@@ -77,13 +77,13 @@ export default function SystemSpecs() {
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
-                    className="bg-neutral-carbon/5 border border-white/5 p-6 flex gap-6 group hover:bg-neutral-carbon/10 transition-all"
+                    className="bg-neutral-carbon/5 border border-white/5 p-4 flex gap-4 group hover:bg-neutral-carbon/10 transition-all"
                   >
-                    <div className="shrink-0 w-12 h-12 bg-accent-metal/10 border border-accent-metal/20 flex items-center justify-center p-3 group-hover:bg-accent-metal/20 transition-all">
+                    <div className="shrink-0 w-10 h-10 bg-accent-metal/10 border border-accent-metal/20 flex items-center justify-center p-2 group-hover:bg-accent-metal/20 transition-all">
                       <Icon className="w-full h-full text-accent-metal" />
                     </div>
                     <div>
-                      <h3 className="font-heading text-sm text-white tracking-[0.2em] mb-2 group-hover:text-accent-metal transition-all">{feature.title.toUpperCase()}</h3>
+                      <h3 className="font-heading text-xs text-white tracking-[0.2em] mb-1 group-hover:text-accent-metal transition-all">{feature.title.toUpperCase()}</h3>
                       <p className="font-body text-xs text-white/50 leading-relaxed tracking-wide">
                         {feature.description}
                       </p>

@@ -58,13 +58,13 @@ export default function Home() {
       </section>
 
       <ProfessionalSummary />
-      <SystemSpecs />
       <EducationTimeline />
       <Projects />
       <Resume />
       <SkillsExpertise />
       <Languages />
       <Connect />
+      <SystemSpecs />
       <GetInTouch />
     </main>
   );
