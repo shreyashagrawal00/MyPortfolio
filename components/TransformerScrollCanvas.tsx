@@ -7,12 +7,14 @@ interface TransformerScrollCanvasProps {
   scrollYProgress: MotionValue<number>;
   totalFrames: number;
   imageFolderPath: string;
+  onProgress?: (progress: number) => void;
 }
 
 export default function TransformerScrollCanvas({
   scrollYProgress,
   totalFrames,
   imageFolderPath,
+  onProgress,
 }: TransformerScrollCanvasProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [images, setImages] = useState<HTMLImageElement[]>([]);
@@ -41,6 +43,7 @@ export default function TransformerScrollCanvas({
 
       img.onload = () => {
         loadedCount++;
+        onProgress?.(Math.floor((loadedCount / totalFrames) * 100));
         if (loadedCount === totalFrames) {
           setImagesLoaded(true);
           console.log(`✅ All ${totalFrames} frames loaded successfully`);
@@ -50,6 +53,7 @@ export default function TransformerScrollCanvas({
       img.onerror = () => {
         console.error(`❌ Failed to load frame ${i}: ${img.src}`);
         loadedCount++;
+        onProgress?.(Math.floor((loadedCount / totalFrames) * 100));
         if (loadedCount === totalFrames) {
           setImagesLoaded(true);
         }

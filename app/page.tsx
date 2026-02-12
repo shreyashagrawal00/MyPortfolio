@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useScroll } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import TransformerScrollCanvas from "@/components/TransformerScrollCanvas";
@@ -12,9 +12,12 @@ import NameOverlay from "@/components/NameOverlay";
 import SkillsExpertise from "@/components/SkillsExpertise";
 import Languages from "@/components/Languages";
 import Projects from "@/components/Projects";
+import SystemSpecs from "@/components/SystemSpecs";
 import Connect from "@/components/Connect";
 import GetInTouch from "@/components/GetInTouch";
 import Resume from "@/components/Resume";
+import Terminal from "@/components/Terminal";
+import Preloader from "@/components/Preloader";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -23,8 +26,14 @@ export default function Home() {
     offset: ["start start", "end end"],
   });
 
+  const [loadingProgress, setLoadingProgress] = useState(0);
+  const [isLoaded, setIsLoaded] = useState(false);
+
   return (
-    <main className="bg-base-dark">
+    <main className={`bg-base-dark transition-opacity duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+      <Preloader progress={loadingProgress} onComplete={() => setIsLoaded(true)} />
+      <Terminal />
+
       {/* Scroll Sequence Container (500vh) */}
       <section
         ref={containerRef}
@@ -40,11 +49,16 @@ export default function Home() {
             scrollYProgress={scrollYProgress}
             totalFrames={transformerConfig.totalFrames}
             imageFolderPath={transformerConfig.imageFolderPath}
+            onProgress={setLoadingProgress}
           />
+
+          {/* HUD Overlay */}
+          <TransformerExperience scrollYProgress={scrollYProgress} />
         </div>
       </section>
 
       <ProfessionalSummary />
+      <SystemSpecs />
       <EducationTimeline />
       <Projects />
       <SkillsExpertise />

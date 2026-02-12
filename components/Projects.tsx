@@ -61,8 +61,19 @@ export default function Projects() {
                       /* @ts-ignore */
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover grayscale group-hover/img:grayscale-0 transition-all duration-700 scale-100 group-hover/img:scale-110"
+                      className="w-full h-full object-cover grayscale group-hover/img:grayscale-0 transition-all duration-700 scale-100 group-hover/img:scale-110 group-hover/img:animate-glitch"
                     />
+                    {/* Data stream overlay */}
+                    <div className="absolute inset-0 opacity-0 group-hover/img:opacity-20 pointer-events-none overflow-hidden transition-opacity duration-500">
+                      <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(transparent_50%,rgba(0,0,0,0.5)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,118,0.06))] bg-[length:100%_2px,3px_100%]" />
+                      <div className="animate-slide font-heading text-[8px] text-accent-metal whitespace-pre p-2 leading-none">
+                        {`DATA_SYNC_ID_${index}\n` +
+                          `SECT_RECONFIG_0${index}\n` +
+                          `MAPPING_STRUCT...OK\n` +
+                          `ENERGON_LEVELS: 98%\n` +
+                          `TRANSFORMATION: ACTIVE`}
+                      </div>
+                    </div>
                     <div className="absolute inset-0 bg-accent-metal/10 opacity-0 group-hover/img:opacity-100 transition-opacity duration-700 pointer-events-none" />
                   </div>
                 )}
@@ -115,6 +126,31 @@ export default function Projects() {
           ))}
         </div>
       </div>
+      <style jsx global>{`
+        @keyframes glitch {
+          0% { clip-path: inset(80% 0 0 0); transform: translate(-5px, -5px); }
+          10% { clip-path: inset(10% 0 80% 0); transform: translate(5px, 5px); }
+          20% { clip-path: inset(80% 0 0 0); transform: translate(-5px, -5px); }
+          30% { clip-path: inset(10% 0 80% 0); transform: translate(5px, 5px); }
+          40% { clip-path: inset(50% 0 30% 0); transform: translate(-5px, 5px); }
+          50% { clip-path: inset(30% 0 50% 0); transform: translate(5px, -5px); }
+          60% { clip-path: inset(10% 0 80% 0); transform: translate(5px, 5px); }
+          70% { clip-path: inset(80% 0 10% 0); transform: translate(-5px, 5px); }
+          80% { clip-path: inset(40% 0 40% 0); transform: translate(5px, -5px); }
+          90% { clip-path: inset(10% 0 80% 0); transform: translate(-5px, -5px); }
+          100% { clip-path: inset(80% 0 0 0); transform: translate(5px, 5px); }
+        }
+        .group-hover\/img:animate-glitch {
+          animation: glitch 0.3s steps(2, end) infinite;
+        }
+        @keyframes slide {
+          from { transform: translateY(0); }
+          to { transform: translateY(-100%); }
+        }
+        .animate-slide {
+          animation: slide 10s linear infinite;
+        }
+      `}</style>
     </section>
   );
 }
