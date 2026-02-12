@@ -24,7 +24,11 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 md:px-12 py-4 flex items-center justify-between">
         {/* CTA */}
-        <div className="flex-1" />
+        <div className="flex-1 flex justify-center md:justify-end gap-8 mr-8">
+          <a href="#resume" className="font-heading text-[10px] tracking-[0.2em] text-white/40 hover:text-white transition-colors">
+            RESUME
+          </a>
+        </div>
         <a
           href={navbarConfig.ctaLink}
           className="font-body text-sm md:text-base tracking-wide text-white hover:text-accent-metal transition-colors duration-200 pointer-events-auto"

@@ -14,6 +14,7 @@ import Languages from "@/components/Languages";
 import Projects from "@/components/Projects";
 import Connect from "@/components/Connect";
 import GetInTouch from "@/components/GetInTouch";
+import Resume from "@/components/Resume";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -48,6 +49,7 @@ export default function Home() {
       <Projects />
       <SkillsExpertise />
       <Languages />
+      <Resume />
       <Connect />
       <GetInTouch />
     </main>
