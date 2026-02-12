@@ -31,14 +31,25 @@ export default function EducationTimeline() {
               <div className="absolute -left-[29px] md:-left-[31px] top-1.5 w-4 h-4 rounded-full bg-accent-metal border-4 border-base-dark shadow-[0_0_10px_rgba(183,28,28,0.5)]" />
 
               <div className="bg-neutral-carbon/20 border border-neutral-carbon/50 p-5 md:p-8 backdrop-blur-sm hover:border-accent-metal/50 transition-colors duration-300">
-                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
-                  <div>
-                    <h3 className="font-heading text-xl md:text-2xl text-white tracking-wide">
-                      {item.institution}
-                    </h3>
-                    <p className="font-body text-accent-metal font-bold tracking-widest text-sm uppercase mt-1">
-                      {item.degree} in {item.major}
-                    </p>
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-4">
+                  <div className="flex items-center gap-5">
+                    {item.logo && (
+                      <div className="w-16 h-16 md:w-20 md:h-20 shrink-0 bg-white/5 border border-white/10 p-2 rounded-lg backdrop-blur-sm flex items-center justify-center group-hover:border-accent-metal/50 transition-colors duration-300">
+                        <img
+                          src={item.logo}
+                          alt={item.institution}
+                          className="max-w-full max-h-full object-contain filter drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]"
+                        />
+                      </div>
+                    )}
+                    <div>
+                      <h3 className="font-heading text-xl md:text-2xl text-white tracking-wide">
+                        {item.institution}
+                      </h3>
+                      <p className="font-body text-accent-metal font-bold tracking-widest text-sm uppercase mt-1">
+                        {item.degree} in {item.major}
+                      </p>
+                    </div>
                   </div>
                   <div className="font-heading text-white/60 text-sm tracking-widest whitespace-nowrap">
                     {item.period}

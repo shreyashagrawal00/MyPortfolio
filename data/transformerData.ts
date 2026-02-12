@@ -110,6 +110,7 @@ export const educationData = [
     degree: "BTech",
     period: "2024 - 2028",
     major: "Computer Science",
+    logo: "/images/education/gla-university.png",
   },
 ];
 
