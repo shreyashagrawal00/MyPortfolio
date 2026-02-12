@@ -1,9 +1,23 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Download, FileText, Eye } from "lucide-react";
 
+type ResumeFormat = "png" | "jpg" | "pdf";
+
 export default function Resume() {
+  const [format, setFormat] = useState<ResumeFormat>("png");
+
+  const formats: { id: ResumeFormat; label: string; ext: string }[] = [
+    { id: "png", label: "PNG IMAGE", ext: ".png" },
+    { id: "jpg", label: "JPEG IMAGE", ext: ".jpg" },
+    { id: "pdf", label: "PDF DOCUMENT", ext: ".pdf" },
+  ];
+
+  const currentFormat = formats.find((f) => f.id === format) || formats[0];
+  const resumePath = `/resume${currentFormat.ext}`;
+
   return (
     <section id="resume" className="py-16 md:py-24 px-4 md:px-12 bg-base-dark relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
@@ -36,12 +50,13 @@ export default function Resume() {
               alt="Resume Preview"
               className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
             />
+
             {/* Scanning line decoration */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent-metal/10 to-transparent -translate-y-full group-hover:animate-[scan_3s_linear_infinite] pointer-events-none" />
 
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-base-dark/40 backdrop-blur-sm">
               <a
-                href="/resume.png"
+                href={resumePath}
                 target="_blank"
                 className="bg-accent-metal text-white px-6 py-3 font-heading text-xs tracking-[0.2em] flex items-center gap-2 hover:bg-accent-metal/80 transition-colors"
               >
@@ -62,17 +77,34 @@ export default function Resume() {
               <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-accent-metal/20 group-hover:border-accent-metal transition-colors" />
 
               <h3 className="font-heading text-xl text-white tracking-widest mb-4">SYSTEM EXPORT</h3>
+
+              {/* Format selection UI */}
+              <div className="flex gap-2 mb-8">
+                {formats.map((f) => (
+                  <button
+                    key={f.id}
+                    onClick={() => setFormat(f.id)}
+                    className={`px-4 py-2 text-[10px] font-heading tracking-widest border transition-all ${format === f.id
+                      ? "bg-accent-metal border-accent-metal text-white"
+                      : "bg-white/5 border-white/10 text-white/40 hover:bg-white/10"
+                      }`}
+                  >
+                    {f.id.toUpperCase()}
+                  </button>
+                ))}
+              </div>
+
               <p className="font-body text-white/50 mb-8 leading-relaxed">
-                Download the complete professional dossier in high-resolution image format. Contains full technical stack, project history, and educational milestones.
+                Download the complete professional dossier in your preferred format. Contains full technical stack, project history, and educational milestones.
               </p>
 
               <a
-                href="/resume.png"
-                download="Shreyash_Agrawal_Resume.png"
+                href={resumePath}
+                download={`Shreyash_Agrawal_Resume${currentFormat.ext}`}
                 className="inline-flex items-center gap-4 bg-white/5 border border-white/10 px-8 py-4 text-white hover:bg-accent-metal hover:border-accent-metal transition-all group/btn w-full justify-center md:w-auto"
               >
                 <Download className="w-5 h-5 group-hover/btn:animate-bounce" />
-                <span className="font-heading text-xs tracking-[0.3em]">DOWNLOAD RESUME</span>
+                <span className="font-heading text-xs tracking-[0.3em]">DOWNLOAD {format.toUpperCase()}</span>
               </a>
             </motion.div>
 
@@ -80,7 +112,7 @@ export default function Resume() {
             <div className="grid grid-cols-2 gap-4">
               <div className="p-4 border border-white/5 bg-white/2">
                 <span className="block font-heading text-[10px] text-accent-metal/50 tracking-widest mb-1">FILE_TYPE</span>
-                <span className="block font-body text-white/80">PNG IMAGE</span>
+                <span className="block font-body text-white/80 uppercase">{currentFormat.label}</span>
               </div>
               <div className="p-4 border border-white/5 bg-white/2">
                 <span className="block font-heading text-[10px] text-accent-metal/50 tracking-widest mb-1">LAST_UPDATE</span>
@@ -93,3 +125,4 @@ export default function Resume() {
     </section>
   );
 }
+
