@@ -155,6 +155,14 @@ export const projectsData = [
     source: "https://github.com/shreyashagrawal00/WebXdesign_Project",
     image: "/images/projects/eseva-india.png",
   },
+  {
+    title: "Briefly: AI Information Hub",
+    description: "A high-performance, AI-driven information processing hub designed to eliminate content overload by transforming YouTube videos, PDFs, and news into actionable summaries.",
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "OpenAI", "JWT", "Google API"],
+    link: "https://summarizer-agent.vercel.app/",
+    source: "https://github.com/shreyashagrawal00/SummarizerAgent",
+    image: "/images/projects/briefly.png",
+  },
 ];
 
 export const contactData = {
