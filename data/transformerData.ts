@@ -163,6 +163,14 @@ export const projectsData = [
     source: "https://github.com/shreyashagrawal00/SummarizerAgent",
     image: "/images/projects/briefly.png",
   },
+  {
+    title: "Smart Attendance Portal",
+    description: "A web-based system designed to simplify and automate the attendance process for students and teachers, featuring a digital platform for efficient recording, management, and analysis.",
+    tech: ["Node.js", "Express.js", "MongoDB Atlas", "React.js", "JWT", "Tailwind CSS"],
+    link: "https://mini-project-1liwntyq6-shreyashagrawal00s-projects.vercel.app",
+    source: "https://github.com/shreyashagrawal00/Smart-Attendance-Portal",
+    image: "/images/projects/smart-attendance-portal.png",
+  },
 ];
 
 export const contactData = {
