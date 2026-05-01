@@ -142,7 +142,7 @@ export const projectsData = [
   {
     title: "Smart Hostel Hub",
     description: "A comprehensive digital management ecosystem designed to streamline hostel life for both students and administration, featuring real-time communication and safety automation.",
-    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Tailwind"],
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB", "JWT", "Tailwind" ,"Axios"],
     link: "https://hosteltracker00.vercel.app/",
     source: "https://github.com/shreyashagrawal00/HackOverflow_2026",
     image: "/images/projects/smart-hostel-hub.png",
@@ -170,6 +170,14 @@ export const projectsData = [
     link: "https://mini-project-1liwntyq6-shreyashagrawal00s-projects.vercel.app",
     source: "https://github.com/shreyashagrawal00/Smart-Attendance-Portal",
     image: "/images/projects/smart-attendance-portal.png",
+  },
+  {
+    title: "ElectionEase Bot",
+    description: "An AI-powered election assistance platform that helps users make informed decisions through features like a Gemini-based chatbot, candidate research tools, and real-time news updates.",
+    tech: ["React (Vite)", "Tailwind CSS", "Framer Motion", "Node.js", "Express.js", "MongoDB Atlas", "Gemini API"],
+    link: "https://election-ease-bot.vercel.app/",
+    source: "https://github.com/shreyashagrawal00/ElectionEase-Bot",
+    image: "/images/projects/election-ease-bot.png",
   },
 ];
 
