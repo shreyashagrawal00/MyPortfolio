@@ -116,7 +116,7 @@ export default function Resume() {
               </div>
               <div className="p-4 border border-white/5 bg-white/2">
                 <span className="block font-heading text-[10px] text-accent-metal/50 tracking-widest mb-1">LAST_UPDATE</span>
-                <span className="block font-body text-white/80">FEB 2026</span>
+                <span className="block font-body text-white/80">MAY 2026</span>
               </div>
             </div>
           </div>
