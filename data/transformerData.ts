@@ -7,7 +7,7 @@ export const transformerConfig = {
 
 export const professionalSummary = {
   title: "PROFESSIONAL SUMMARY",
-  content: "Motivated and detail-oriented Software Engineering aspirant with a strong foundation in computer science fundamentals, data structures, and problem-solving. Experienced in building projects using modern programming languages and frameworks, with a keen interest in developing scalable, efficient, and user-centric software solutions. Adept at learning new technologies quickly, collaborating in team environments, and applying logical thinking to real-world problems. Seeking an opportunity to contribute as a Software Engineer while continuously enhancing technical and professional skills.",
+  content: "I'm Shreyash Agrawal, a B.Tech Information Technology student at GLA University with a strong foundation in full-stack development and a focused transition into LLM Engineering — building AI-powered applications using LangChain, RAG Pipelines, and Vector Databases. I've shipped production-ready projects across the full AI stack — from deepfake detection using CNN + LSTM to RAG-based code review platforms with FAISS, HuggingFace Embeddings, and Groq LLM — backed by real internship experience as a Full Stack Developer at Codec Technologies. My goal is to build intelligent systems that are not just technically sound but actually useful in the real world.",
 };
 
 export interface HUDCopyLine {
@@ -114,19 +114,61 @@ export const skillsData = {
   title: "SKILLS & EXPERTISE",
   description: "A comprehensive collection of my technical and professional capabilities.",
   skills: [
-    "HTML",
-    "CSS",
-    "JavaScript",
-    "Node-JS",
-    "React-JS",
-    "Express",
-    "MongoDB",
-    "SQL",
-    "JAVA",
-    "Python",
-    "Git & GitHub",
-    "Tailwind",
-  ],
+  // Languages
+  "C",
+  "C++",
+  "Java",
+  "Python",
+  "JavaScript",
+  "TypeScript",
+
+  // Web Development
+  "HTML",
+  "CSS",
+  "React-JS",
+  "Node-JS",
+  "Express",
+  "Tailwind",
+  "Bootstrap",
+  "REST APIs",
+
+  // Backend & Databases
+  "FastAPI",
+  "MongoDB",
+  "MySQL",
+  "Redis",
+  "Firebase",
+  "JWT",
+
+  // LLM Engineering
+  "LangChain",
+  "RAG Pipelines",
+  "FAISS",
+  "ChromaDB",
+  "HuggingFace Embeddings",
+  "Prompt Engineering",
+  "Groq API",
+  "Mistral AI",
+  "Pydantic",
+  "Streamlit",
+
+  // AI/ML & Deep Learning
+  "NumPy",
+  "Pandas",
+  "Scikit-learn",
+  "TensorFlow",
+  "Keras",
+  "OpenCV",
+  "Matplotlib",
+
+  // Tools & DevOps
+  "Git & GitHub",
+  "Docker",
+  "Docker Compose",
+  "nginx",
+  "AWS EC2",
+  "Postman",
+],
 };
 
 export const languagesData = {
@@ -179,6 +221,40 @@ export const projectsData = [
     source: "https://github.com/shreyashagrawal00/ElectionEase-Bot",
     image: "/images/projects/election-ease-bot.png",
   },
+  {
+    title: "CineMatch - Movie Recommendation System",
+    description: "A content-based movie recommendation system that uses TF-IDF vectorization and cosine similarity on movie metadata to surface similar titles. Integrates TMDB API for real-time posters and details, with a FastAPI backend, Streamlit frontend, and deployed via Docker on AWS EC2.",
+    tech: ["Python", "FastAPI", "Streamlit", "Scikit-learn", "TF-IDF", "Cosine Similarity", "TMDB API", "Docker", "AWS EC2"],
+    link: "http://3.26.201.177:8501/",
+    source: "https://github.com/shreyashagrawal00/movies_recommendation",
+    image: "/images/projects/cinematch.png",
+  },
+    {
+    title: "🛡️ FakeShield AI",
+    description: "A full-stack deepfake detection platform that classifies images and videos as real or AI-generated with a confidence score. Uses a fine-tuned ResNet50 for image detection and a TimeDistributed CNN + LSTM architecture for temporal video analysis. FastAPI backend serves both models, with a React frontend proxied via nginx — fully containerized with Docker Compose.",
+    tech: ["Python", "FastAPI", "TensorFlow", "Keras", "ResNet50", "LSTM", "OpenCV", "React (Vite)", "Tailwind CSS", "Docker", "Docker Compose", "Nginx"],
+    link: "https://github.com/shreyashagrawal00/FakeShield",
+    source: "https://github.com/shreyashagrawal00/FakeShield",
+    image: "/images/projects/FakeShield.png",
+  },
+ {
+    title: "🎬 AI Video Assistant",
+    description: "A RAG-based meeting intelligence platform that transcribes, summarizes, and lets you chat with your meeting recordings. Supports YouTube URLs, local files, and direct uploads with dual-engine transcription — local Whisper for English and Sarvam AI for Hinglish. Uses ChromaDB + HuggingFace embeddings for transcript indexing and Mistral AI for structured extraction of summaries, action items, decisions, and open questions.",
+    tech: ["Python", "FastAPI", "LangChain", "Mistral AI", "ChromaDB", "HuggingFace Embeddings", "Whisper", "Sarvam AI STT", "Streamlit", "FFmpeg"],
+    link: "https://aivideoassistant00.streamlit.app/",
+    source: "https://github.com/shreyashagrawal00/AI_Video_Assistant",
+    image: "/images/projects/AI-video-agent.png",
+  },
+{
+    title: "🔍 AI Code Reviewer",
+    description: "An AI-powered code review tool that analyzes pasted snippets, uploaded files, or entire GitHub repositories. Uses LangChain + Groq for structured reviews covering bugs, fixes, and optimizations. For repo-level analysis, ingests files via GitHub API, runs per-file LLM analysis, builds a FAISS vector store from code chunks, and enables a RAG-powered Ask Repo Q&A interface.",
+    tech: ["Python", "LangChain", "Groq API", "FAISS", "HuggingFace Embeddings", "Pydantic", "Streamlit", "GitHub REST API"],
+    link: "https://aivideoassistant00.streamlit.app/",
+    source: "https://github.com/shreyashagrawal00/AI-Code-Reviewer",
+    image: "/images/projects/ai-code-reviewer.png",
+  }
+
+
 ];
 
 export const contactData = {
