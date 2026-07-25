@@ -247,6 +247,14 @@ export const projectsData = [
     image: "/images/projects/election-ease-bot.png",
   },
   {
+    title: "🎙️ AI-Based Mock Interview System",
+    description: "A full-stack AI-powered mock interview platform where users practice technical and behavioral interviews with real-time AI scoring across Communication, Technical Depth, and Confidence. Features 4 interview modes (Standard, Timed Pressure, STAR Behavioral, Live Code Sandbox), custom resume and JD upload for tailored questions, Text-to-Speech question reading, voice answer dictation with live animated waveform, webcam preview, AI benchmark model answers, performance analytics dashboard with score trends, PDF scorecard export, question bookmarking, and dark/light theme — deployed on Vercel + Render.",
+    tech: ["React", "Vite", "Node.js", "Express.js", "MongoDB", "Mongoose", "Google Gemini AI", "Mistral AI", "Web Speech API", "html2pdf.js", "React Router v6"],
+    link: "https://mock-interview-system-swart.vercel.app/",
+    source: "https://github.com/shreyashagrawal00/Mock-Interview-System",
+    image: "/images/projects/AI-Based Mock Interview System.png",
+  },
+  {
     title: "CineMatch - Movie Recommendation System",
     description: "A content-based movie recommendation system that uses TF-IDF vectorization and cosine similarity on movie metadata to surface similar titles. Integrates TMDB API for real-time posters and details, with a FastAPI backend, Streamlit frontend, and deployed via Docker on AWS EC2.",
     tech: ["Python", "FastAPI", "Streamlit", "Scikit-learn", "TF-IDF", "Cosine Similarity", "TMDB API", "Docker", "AWS EC2"],
