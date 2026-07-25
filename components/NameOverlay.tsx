@@ -43,7 +43,7 @@ export default function NameOverlay({ name }: { name: string }) {
         />
         <div className="flex flex-col items-start mt-2">
           <span className="font-heading text-[8px] md:text-[10px] text-white/30 tracking-[0.3em] md:tracking-[0.5em]">SOFTWARE ENGINEER</span>
-          <span className="font-body text-lg md:text-2xl text-white font-bold italic tracking-[0.05em] leading-tight">2nd Year GLA University Student</span>
+          <span className="font-body text-lg md:text-2xl text-white font-bold italic tracking-[0.05em] leading-tight">3rd Year GLA University Student</span>
           <span className="font-heading text-[8px] md:text-[10px] text-accent-metal tracking-[0.3em] md:tracking-[0.5em] mt-2 border border-accent-metal/50 px-2 py-0.5">SYSTEM: ACTIVE</span>
         </div>
       </div>
