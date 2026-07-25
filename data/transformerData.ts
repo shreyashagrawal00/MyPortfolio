@@ -7,7 +7,7 @@ export const transformerConfig = {
 
 export const professionalSummary = {
   title: "PROFESSIONAL SUMMARY",
-  content: "I'm Shreyash Agrawal, a B.Tech Information Technology student at GLA University with a strong foundation in full-stack development and a focused transition into LLM Engineering — building AI-powered applications using LangChain, RAG Pipelines, and Vector Databases. I've shipped production-ready projects across the full AI stack — from deepfake detection using CNN + LSTM to RAG-based code review platforms with FAISS, HuggingFace Embeddings, and Groq LLM — backed by real internship experience as a Full Stack Developer at Codec Technologies. My goal is to build intelligent systems that are not just technically sound but actually useful in the real world.",
+  content: "I'm Shreyash Agrawal, a B.Tech Information Technology student at GLA University with a strong foundation in full-stack development and deep expertise in LLM Engineering — building AI-powered applications using LangChain, LangGraph, RAG Pipelines, Multi-Agent Systems, and Vector Databases. I've shipped production-ready projects across the full AI stack — from an autonomous 11-agent software engineering platform (CodeSmith AI) and deepfake detection using CNN + LSTM, to RAG-based code review systems with FAISS and HuggingFace Embeddings, and a satellite-based AQI prediction platform built for ISRO's BAH 2026 using Google Earth Engine, XGBoost, LightGBM, and SHAP — backed by real internship experience as a Full Stack Developer at Codec Technologies. My goal is to build intelligent systems that are not just technically sound but actually useful in the real world.",
 };
 
 export interface HUDCopyLine {
@@ -111,9 +111,9 @@ export const educationData = [
 ];
 
 export const skillsData = {
-  title: "SKILLS & EXPERTISE",
-  description: "A comprehensive collection of my technical and professional capabilities.",
-  skills: [
+ title: "SKILLS & EXPERTISE",
+description: "A comprehensive collection of my technical and professional capabilities.",
+skills: [
   // Languages
   "C",
   "C++",
@@ -142,15 +142,20 @@ export const skillsData = {
 
   // LLM Engineering
   "LangChain",
+  "LangGraph",
   "RAG Pipelines",
+  "Multi-Agent Systems",
   "FAISS",
   "ChromaDB",
   "HuggingFace Embeddings",
   "Prompt Engineering",
   "Groq API",
   "Mistral AI",
-  "Pydantic",
+  "Google Gemini",
+  "Pydantic v2",
   "Streamlit",
+  "Conversation Memory",
+  "Streaming Responses",
 
   // AI/ML & Deep Learning
   "NumPy",
@@ -160,6 +165,22 @@ export const skillsData = {
   "Keras",
   "OpenCV",
   "Matplotlib",
+  "Seaborn",
+  "XGBoost",
+  "LightGBM",
+  "CatBoost",
+  "SHAP",
+
+  // Deep Learning Concepts
+  "ANN",
+  "CNN",
+  "RNN",
+  "LSTM",
+  "Transfer Learning",
+  "ResNet50",
+  "Sequence Modeling",
+  "TF-IDF",
+  "Cosine Similarity",
 
   // Tools & DevOps
   "Git & GitHub",
@@ -168,6 +189,10 @@ export const skillsData = {
   "nginx",
   "AWS EC2",
   "Postman",
+  "Google Earth Engine",
+  "WebSockets",
+  "SQLAlchemy",
+
 ],
 };
 
@@ -229,6 +254,15 @@ export const projectsData = [
     source: "https://github.com/shreyashagrawal00/movies_recommendation",
     image: "/images/projects/cinematch.png",
   },
+  {
+    title: "🛰️ AQI-Quality-Prediction",
+    description: "A research-grade satellite-based AQI estimation platform built for ISRO's BAH 2026 problem statement. Integrates Google Earth Engine (Sentinel-5P TROPOMI, MODIS AOD) and NASA FIRMS active fire API with CPCB ground station data to predict surface AQI across India — including unmonitored regions. Features an ensemble of XGBoost, LightGBM, CatBoost, and Random Forest models (R² > 0.85), SHAP explainability, Z-score spatio-temporal HCHO hotspot detection, 7-day autoregressive forecasting with bootstrap confidence intervals, and a 10-page interactive dashboard with PDF export.",
+    tech: ["Python", "Streamlit", "Google Earth Engine", "Sentinel-5P TROPOMI", "MODIS AOD", "NASA FIRMS API", "XGBoost", "LightGBM", "CatBoost", "Scikit-learn", "SHAP", "Plotly", "Mapbox", "FPDF2", "Pandas", "NumPy"],
+    link: "https://aqi-quality-prediction-00.streamlit.app/",
+    source: "https://github.com/shreyashagrawal00/AQI-Quality-Prediction",
+    image: "/images/projects/AQI-Quality-Prediction.png",
+  },
+
     {
     title: "🛡️ FakeShield AI",
     description: "A full-stack deepfake detection platform that classifies images and videos as real or AI-generated with a confidence score. Uses a fine-tuned ResNet50 for image detection and a TimeDistributed CNN + LSTM architecture for temporal video analysis. FastAPI backend serves both models, with a React frontend proxied via nginx — fully containerized with Docker Compose.",
@@ -252,8 +286,31 @@ export const projectsData = [
     link: "https://aivideoassistant00.streamlit.app/",
     source: "https://github.com/shreyashagrawal00/AI-Code-Reviewer",
     image: "/images/projects/ai-code-reviewer.png",
+  },
+  {
+    title: "✈️ AI Travel Planning System",
+    description: "A multi-agent AI travel planner built with LangGraph where four specialized agents — Flight, Hotel, Itinerary, and Final — work sequentially to process a plain-English trip request into a complete travel report. Fetches real flight data via AviationStack API, searches hotels via Tavily, and synthesizes a day-by-day itinerary using Groq LLM, with conversation state persisted across sessions in PostgreSQL via LangGraph's PostgresSaver checkpointer and live agent progress streamed to a Streamlit UI.",
+    tech: ["Python", "LangGraph", "LangChain", "Groq LLM", "Streamlit", "PostgreSQL", "PostgresSaver", "AviationStack API", "Tavily API", "Tenacity", "psycopg3"],
+    link: "https://ai-travel-planning-system00.streamlit.app/",
+    source: "https://github.com/shreyashagrawal00/AI-Travel-Planning-System",
+    image: "/images/projects/ai-travel-planning-system.png",
+  },
+   {
+    title: "📝 AI Blog Writing Agent",
+    description: "A production-ready multi-agent AI blog generation system built with LangGraph. Takes a user topic through input guardrails, a router that decides between research and closed-book mode, a Tavily-powered research agent, and a blog planner — then fans out parallel worker agents to write each section simultaneously using LangGraph's Send() primitive. Sections are merged in correct order via a reducer node, followed by image planning and output guardrails, with LLM fallback routing across Groq, Gemini, and Mistral. Generation history persisted in SQLite and deployed on Streamlit Cloud.",
+    tech: ["Python", "LangGraph", "LangChain", "Groq", "Google Gemini", "Mistral AI", "Tavily Search API", "Pydantic", "Streamlit", "SQLite", "Send() Fanout", "operator.add Reducer"],
+    link: "https://blog-writing-agent00.streamlit.app/",
+    source: "https://github.com/shreyashagrawal00/Blog-Writing-Agent",
+    image: "/images/projects/Blog-writing-Agent.png",
+  },
+  {
+    title: "🛠️ CodeSmith AI",
+   description: "An autonomous multi-agent software engineering platform powered by LangGraph where 11 specialized AI agents — Product Manager, Architect, Database Designer, Backend Developer, Frontend Developer, Reviewer, Security Auditor, QA Engineer, Bug Fixer, Tech Writer, and DevOps Engineer — collaborate through a shared state machine to generate production-ready full-stack applications from a single prompt. Features parallel backend + frontend execution, 2 human-in-the-loop approval gates, an iterative self-correction loop with real compiler feedback (npm build + py_compile), LLM fallback routing across Groq, Gemini, Mistral, Cerebras and NVIDIA, WebSocket live streaming, SQLAlchemy job persistence, IDE-style file explorer UI, and downloadable ZIP output.",
+    tech: ["Python", "LangGraph", "LangChain", "FastAPI", "React", "Vite", "Tailwind CSS", "Pydantic v2", "WebSockets", "SQLAlchemy", "SQLite", "Groq", "Google Gemini", "Mistral AI", "Cerebras", "NVIDIA NIM", "Docker Compose"],
+    link: "https://code-smith-ai00-kappa.vercel.app",
+    source: "https://github.com/shreyashagrawal00/CodeSmith-AI",
+    image: "/images/projects/CodeSmith-AI.png",
   }
-
 
 ];
 
